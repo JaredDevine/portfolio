@@ -24,7 +24,7 @@ const posts = (await getCollection("blog"))
         <li>
           <a href={`/${post.slug}/`} class="space-y-3">
             <Image
-              class="aspect-[2/3] object-cover bg-center h-[240px] md:h-[600px] w-full rounded-small shadow-xl"
+              class="aspect-[2/3] object-cover bg-center h-[240px] md:h-[600px] w-full rounded-small shadow-lg"
               src={`${post.data.heroImage}`}
               alt={`${post.data.title}`}
               quality="max"

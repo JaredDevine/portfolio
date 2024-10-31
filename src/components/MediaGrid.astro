@@ -35,7 +35,7 @@ const {
   class={`flex flex-col md:flex-row gap-6 mt-6 pb-6 ${reverseOrder ? "md:flex-row-reverse" : ""}`}
 >
   <Image
-    class="aspect-[2/3] object-cover bg-center h-[240px] md:h-[624px] w-full md:w-1/2 rounded-small shadow-xl"
+    class="aspect-[2/3] object-cover bg-center h-[240px] md:h-[624px] w-full md:w-1/2 rounded-small shadow-lg"
     src={image1Src ?? null}
     alt={image1Alt ?? null}
     quality="max"
@@ -48,7 +48,7 @@ const {
     {
       image2Src && (
         <Image
-          class="aspect-[2/3] object-cover bg-center h-[240px] md:h-[300px] w-full rounded-small shadow-xl"
+          class="aspect-[2/3] object-cover bg-center h-[240px] md:h-[300px] w-full rounded-small shadow-lg"
           src={image2Src ?? null}
           alt={image2Alt ?? null}
           quality="max"
@@ -62,7 +62,7 @@ const {
     {
       videoSrc ? (
         <video
-          class="aspect-[2/3] object-cover bg-center h-[240px] md:h-[300px] w-full rounded-small shadow-xl"
+          class="aspect-[2/3] object-cover bg-center h-[240px] md:h-[300px] w-full rounded-small shadow-lg"
           width="320"
           height="240"
           controls
@@ -73,7 +73,7 @@ const {
       ) : (
         image3Src && (
           <Image
-            class="aspect-[2/3] object-cover bg-center h-[240px] md:h-[300px] w-full rounded-small shadow-xl"
+            class="aspect-[2/3] object-cover bg-center h-[240px] md:h-[300px] w-full rounded-small shadow-lg"
             src={image3Src ?? null}
             alt={image3Alt ?? null}
             quality="max"
@@ -88,7 +88,7 @@ const {
     {
       videoSrc2 && (
         <video
-          class="aspect-[2/3] object-cover bg-center h-[240px] md:h-[300px] w-full rounded-small shadow-xl"
+          class="aspect-[2/3] object-cover bg-center h-[240px] md:h-[300px] w-full rounded-small shadow-lg"
           width="320"
           height="240"
           controls
