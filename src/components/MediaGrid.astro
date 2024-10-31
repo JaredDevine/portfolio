@@ -1,0 +1,102 @@
+---
+// MediaGrid.astro
+import { Image } from "astro:assets";
+
+export interface Props {
+  image1Src: string;
+  image1Alt: string;
+  image2Src?: string;
+  image2Alt?: string;
+  image3Src?: string;
+  image3Alt?: string;
+  videoSrc?: string;
+  videoAlt?: string;
+  videoSrc2?: string;
+  videoAlt2?: string;
+  reverseOrder?: boolean;
+}
+
+const {
+  image1Src,
+  image1Alt,
+  image2Src,
+  image2Alt,
+  image3Src,
+  image3Alt,
+  videoSrc,
+  videoAlt,
+  videoSrc2,
+  videoAlt2,
+  reverseOrder = false,
+} = Astro.props;
+---
+
+<div
+  class={`flex flex-col md:flex-row gap-6 mt-6 pb-6 ${reverseOrder ? "md:flex-row-reverse" : ""}`}
+>
+  <Image
+    class="aspect-[2/3] object-cover bg-center h-[240px] md:h-[624px] w-full md:w-1/2 rounded-small shadow-xl"
+    src={image1Src ?? null}
+    alt={image1Alt ?? null}
+    quality="max"
+    densities={[1.5, 2]}
+    loading="eager"
+    height={600}
+    width={600}
+  />
+  <div class="flex flex-col gap-6 w-full md:w-1/2">
+    {
+      image2Src && (
+        <Image
+          class="aspect-[2/3] object-cover bg-center h-[240px] md:h-[300px] w-full rounded-small shadow-xl"
+          src={image2Src ?? null}
+          alt={image2Alt ?? null}
+          quality="max"
+          densities={[1.5, 2]}
+          loading="eager"
+          height={600}
+          width={600}
+        />
+      )
+    }
+    {
+      videoSrc ? (
+        <video
+          class="aspect-[2/3] object-cover bg-center h-[240px] md:h-[300px] w-full rounded-small shadow-xl"
+          width="320"
+          height="240"
+          controls
+        >
+          <source src={videoSrc} type="video/mp4" />
+          {videoAlt || "Your browser does not support the video tag."}
+        </video>
+      ) : (
+        image3Src && (
+          <Image
+            class="aspect-[2/3] object-cover bg-center h-[240px] md:h-[300px] w-full rounded-small shadow-xl"
+            src={image3Src ?? null}
+            alt={image3Alt ?? null}
+            quality="max"
+            densities={[1.5, 2]}
+            loading="eager"
+            height={600}
+            width={600}
+          />
+        )
+      )
+    }
+    {
+      videoSrc2 && (
+        <video
+          class="aspect-[2/3] object-cover bg-center h-[240px] md:h-[300px] w-full rounded-small shadow-xl"
+          width="320"
+          height="240"
+          controls
+        >
+          <source src={videoSrc2} type="video/mp4" />
+          {videoAlt2 || "Your browser does not support the video tag."}
+        </video>
+      )
+    }
+  </div>
+</div>

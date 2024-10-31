@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+
+const posts = (await getCollection("blog"))
+  .filter((post) => !post.data.tags || !post.data.tags.includes("Portfolio"))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout title="Blog Page" description="Blog page description goes here.">
+  <div class="mb-12">
+    <h2
+      class="text-4xl tracking-tight text-balance font-display text-black mb-6"
+    >
+      Blog
+    </h2>
+    <em class="text-zinc-500">Things I like.</em>
+  </div>
+  <ul class="grid md:grid-cols-2 gap-6">
+    {
+      posts.map((post) => (
+        <li>
+          <a href={`/${post.slug}/`} class="space-y-3">
+            <Image
+              class="aspect-[2/3] object-cover bg-center h-[240px] md:h-[600px] w-full rounded-small shadow-xl"
+              src={`${post.data.heroImage}`}
+              alt={`${post.data.title}`}
+              quality="max"
+              densities={[1.5, 2]}
+              loading="eager"
+              height={440}
+              width={660}
+            />
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>

@@ -1,62 +1,113 @@
 ---
-import Layout from '../layouts/BlogPost.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Narrow from "../components/Narrow.astro";
+import MediaGrid from "../components/MediaGrid.astro";
 ---
 
-<Layout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
-	heroImage="/blog-placeholder-about.jpg"
->
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
-		viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-		adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
-		et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-		vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
-		sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
-	</p>
+<BaseLayout title="About Me" description="Lorem ipsum dolor sit amet">
+  <section>
+    <div class="border-b border-zinc-200 pb-12 mb-12">
+      <h2
+        class="text-4xl tracking-tight text-balance font-display text-black mb-6"
+      >
+        My Story
+      </h2>
+      <em class="text-zinc-500">console.log(life)</em>
+    </div>
 
-	<p>
-		Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non
-		tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non
-		blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
-		porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
-		massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-		Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis
-		bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra
-		massa massa ultricies mi.
-	</p>
+    <Narrow>
+      <p>
+        Hi, I'm Jared Devine, a hybrid designer and front-end developer with a
+        background in Interactive Multimedia Development from Algonquin College,
+        where I graduated with honors in 2009. My career began in Toronto,
+        working with digital agencies and large brands, which sharpened my
+        design and development skills. I eventually returned to Ottawa, engaging
+        in agency and freelance work before joining IBM as a UX Engineer. Over
+        my five years there, my role evolved to focus on prototyping,
+        interaction work, and ultimately, UX Design.
+      </p>
+      <p>
+        Over the last 15 years, my passion for technology has allowed me to
+        develop a diverse skill set, thriving in UX Design and Front-End
+        Development. I serve as a bridge between design and development teams,
+        enhancing communication and collaboration, which is crucial for the
+        successful release of modern, problem-solving, and inspiring products.
+        This collaborative approach is vital in creating impactful and beautiful
+        digital solutions.
+      </p>
+      <p>
+        I am committed to creating meaningful user experiences that simplify
+        complex tasks, making digital products not only visually appealing but
+        also functional and easy to use. By continuously learning and adapting
+        to new technologies, design theories, and practices, I stay ahead in the
+        field, allowing me to experiment with innovative concepts and solutions.
+        My ultimate goal is to enhance people's lives through accessible,
+        intuitive, and high-quality design.
+      </p>
+    </Narrow>
 
-	<p>
-		Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
-		suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet
-		nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae
-		turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem
-		dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat
-		semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-		vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum
-		facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam
-		vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla
-		urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
-	</p>
+    <MediaGrid
+      image1Src="/images/levis.png"
+      image1Alt="Levi's Screenshot"
+      image2Src="/images/advantage.png"
+      image2Alt="Advantage Communications Screenshot"
+      image3Src="/images/ca-one.png"
+      image3Alt="Cognos Screenshot"
+    />
 
-	<p>
-		Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper
-		viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc
-		scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur
-		gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus
-		pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-		blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id
-		cursus metus aliquam eleifend mi.
-	</p>
-
-	<p>
-		Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta
-		nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam
-		tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci
-		ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
-		proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
-	</p>
-</Layout>
+    <Narrow>
+      <div class="py-12 border-b border-zinc-200">
+        <h3 class="text-3xl font-semibold">Brands</h3>
+        <ul class="mt-3">
+          <li>IBM</li>
+          <li>Levi's</li>
+          <li>LCBO</li>
+          <li>Sunny D</li>
+          <li>Guinness</li>
+          <li>Metronome</li>
+          <li>Grand &amp; Toy</li>
+          <li>Canadian Tire</li>
+          <li>Moose Bicycle</li>
+          <li>Hudsons' Bay Company</li>
+          <li>Advantage Communications</li>
+        </ul>
+      </div>
+      <div class="py-12 border-b border-zinc-200">
+        <h3 class="text-3xl font-semibold">Skills</h3>
+        <ul class="mt-3">
+          <li>UI Design</li>
+          <li>UX Design</li>
+          <li>Wireframing</li>
+          <li>Prototyping</li>
+          <li>Product Design</li>
+          <li>Interaction Design</li>
+          <li>Front-End Development</li>
+          <li>Interactive Multimedia Development</li>
+        </ul>
+      </div>
+      <div class="py-12 border-b border-zinc-200">
+        <h3 class="text-3xl font-semibold">Tech</h3>
+        <ul class="mt-3">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>Javascript</li>
+          <li>React</li>
+          <li>Astro</li>
+          <li>PHP</li>
+          <li>Github</li>
+        </ul>
+      </div>
+      <div class="py-12 border-b border-zinc-200">
+        <h3 class="text-3xl font-semibold">Tools</h3>
+        <ul class="mt-3">
+          <li>Figma</li>
+          <li>Photoshop</li>
+          <li>Illustrator</li>
+          <li>After Effects</li>
+          <li>Final Cut Pro</li>
+          <li>Logic Pro</li>
+        </ul>
+      </div>
+    </Narrow>
+  </section>
+</BaseLayout>
