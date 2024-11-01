@@ -10,8 +10,10 @@ export interface Props {
   image3Src?: string;
   image3Alt?: string;
   videoSrc?: string;
+  videoPoster?: string;
   videoAlt?: string;
   videoSrc2?: string;
+  videoPoster2?: string;
   videoAlt2?: string;
   reverseOrder?: boolean;
 }
@@ -24,8 +26,10 @@ const {
   image3Src,
   image3Alt,
   videoSrc,
+  videoPoster,
   videoAlt,
   videoSrc2,
+  videoPoster2,
   videoAlt2,
   reverseOrder = false,
 } = Astro.props;
@@ -65,6 +69,7 @@ const {
           class="aspect-[2/3] object-cover bg-center h-[240px] md:h-[300px] w-full rounded-small shadow-lg"
           width="320"
           height="240"
+          poster={videoPoster}
           controls
         >
           <source src={videoSrc} type="video/mp4" />
@@ -91,6 +96,7 @@ const {
           class="aspect-[2/3] object-cover bg-center h-[240px] md:h-[300px] w-full rounded-small shadow-lg"
           width="320"
           height="240"
+          poster={videoPoster2}
           controls
         >
           <source src={videoSrc2} type="video/mp4" />
