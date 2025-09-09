@@ -1,7 +1,7 @@
 ---
-import HeaderLink from "./HeaderLink.astro";
-import { SITE_TITLE } from "../consts";
-import { Image } from "astro:assets";
+import HeaderLink from './HeaderLink.astro';
+import { SITE_TITLE } from '../consts';
+import { Image } from 'astro:assets';
 ---
 
 <header class="py-6 md:py-12 mb-6">
@@ -12,11 +12,11 @@ import { Image } from "astro:assets";
           class="rounded-full shadow-lg"
           width={80}
           height={80}
-          src="/images/profile-photo.jpg"
+          src="/images/profile-photo-2.jpg"
           alt=""
           loading="eager"
-        />{SITE_TITLE}</a
-      >
+        />{SITE_TITLE}
+      </a>
     </h2>
 
     <ul
@@ -47,46 +47,46 @@ import { Image } from "astro:assets";
     <script>
       function initializeMenuToggle() {
         const menuToggle = document.querySelector(
-          ".menu-toggle"
+          '.menu-toggle',
         ) as HTMLDivElement;
-        const menu = document.querySelector("ul");
+        const menu = document.querySelector('ul');
 
         if (menuToggle && menu) {
-          menuToggle.addEventListener("click", () => {
-            if (menuToggle.classList.contains("disabled")) return; // Prevent multiple rapid clicks
-            menuToggle.classList.add("disabled");
+          menuToggle.addEventListener('click', () => {
+            if (menuToggle.classList.contains('disabled')) return; // Prevent multiple rapid clicks
+            menuToggle.classList.add('disabled');
 
-            menuToggle.classList.toggle("active");
-            if (menu.classList.contains("invisible")) {
-              menu.classList.remove("invisible");
+            menuToggle.classList.toggle('active');
+            if (menu.classList.contains('invisible')) {
+              menu.classList.remove('invisible');
               setTimeout(() => {
-                menu.classList.remove("opacity-hidden");
-                menu.classList.add("opacity-visible");
+                menu.classList.remove('opacity-hidden');
+                menu.classList.add('opacity-visible');
               }, 10); // Small delay to ensure the transition effect
             } else {
-              menu.classList.remove("opacity-visible");
-              menu.classList.add("opacity-hidden");
+              menu.classList.remove('opacity-visible');
+              menu.classList.add('opacity-hidden');
               menu.addEventListener(
-                "transitionend",
+                'transitionend',
                 () => {
-                  if (menu.classList.contains("opacity-hidden")) {
-                    menu.classList.add("invisible");
+                  if (menu.classList.contains('opacity-hidden')) {
+                    menu.classList.add('invisible');
                   }
-                  menuToggle.classList.remove("disabled"); // Re-enable the button after transition
+                  menuToggle.classList.remove('disabled'); // Re-enable the button after transition
                 },
-                { once: true }
+                { once: true },
               );
             }
           });
 
           // Ensure the disabled class is removed after the transition ends
-          menu.addEventListener("transitionend", () => {
-            menuToggle.classList.remove("disabled");
+          menu.addEventListener('transitionend', () => {
+            menuToggle.classList.remove('disabled');
           });
         }
       }
 
-      document.addEventListener("astro:after-swap", initializeMenuToggle);
+      document.addEventListener('astro:after-swap', initializeMenuToggle);
       initializeMenuToggle(); // Initialize on first load
     </script>
 
