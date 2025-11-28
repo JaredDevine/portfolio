@@ -11,6 +11,10 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+_logs/
+
+# npm cache
+.npm-cache/
 
 
 # environment variables
